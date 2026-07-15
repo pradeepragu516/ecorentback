@@ -115,9 +115,10 @@ exports.getRentalDetails = async (req, res, next) => {
     } else {
       rental = dbHandler.findById('bookings', req.params.id);
       if (rental) {
+        const userId = rental.user;
         rental.vehicle = dbHandler.findById('vehicles', rental.vehicle);
-        const user = dbHandler.findById('users', rental.user);
-        rental.user = user ? { username: user.username, email: user.email } : null;
+        const user = dbHandler.findById('users', userId);
+        rental.user = user ? { _id: userId, username: user.username, email: user.email } : null;
       }
     }
 

@@ -20,50 +20,42 @@ const seedUsers = [
 
 const seedVehicles = [
   {
-    make: 'Tesla',
-    model: 'Model 3',
-    year: 2023,
-    type: 'Electric',
-    pricePerDay: 120,
-    seats: 5,
-    transmission: 'Automatic',
-    fuelType: 'Electric',
-    features: ['Autopilot', 'Premium Sound System', 'All-Wheel Drive'],
-    image: 'tesla-model3.jpg',
-    isAvailable: true,
-    rating: 4.8,
-    location: {
-      address: '123 Green St',
-      city: 'San Francisco',
-      country: 'USA',
-      coordinates: {
-        lat: 37.7749,
-        lng: -122.4194
-      }
-    }
+    name: 'Rivian R1S Adventure',
+    type: 'suv',
+    image: 'https://images.hgmsites.net/hug/2022-rivian-r1s_100818318_h.jpg',
+    price: 150,
+    range: 320,
+    speed: 200,
+    rating: 4.9,
+    location: 'Airport Terminal 1',
+    coordinates: {
+      lat: 37.6213,
+      lng: -122.3790
+    },
+    availability: 'Available',
+    description: 'The Rivian R1S is an all-electric full-size SUV designed for adventures and rugged terrain.',
+    features: ['Off-road modes', 'Panoramic Roof', 'Gear Guard Security System'],
+    passengers: 7,
+    batteryCapacity: 135
   },
   {
-    make: 'Toyota',
-    model: 'Prius',
-    year: 2022,
-    type: 'Hybrid',
-    pricePerDay: 75,
-    seats: 5,
-    transmission: 'Automatic',
-    fuelType: 'Hybrid',
-    features: ['Bluetooth', 'Backup Camera', 'Keyless Entry'],
-    image: 'toyota-prius.jpg',
-    isAvailable: true,
-    rating: 4.5,
-    location: {
-      address: '456 Eco Ave',
-      city: 'Portland',
-      country: 'USA',
-      coordinates: {
-        lat: 45.5152,
-        lng: -122.6784
-      }
-    }
+    name: 'Specialized Turbo Vado 5.0',
+    type: 'bike',
+    image: 'https://images.specialized.com/media/photo/image/318854-318854.jpg',
+    price: 35,
+    range: 90,
+    speed: 45,
+    rating: 4.7,
+    location: 'City Center',
+    coordinates: {
+      lat: 37.7749,
+      lng: -122.4194
+    },
+    availability: 'Available',
+    description: 'The Specialized Turbo Vado 5.0 is a premium class-3 e-bike designed for daily commutes and urban transport.',
+    features: ['Turbo Assist', 'Built-in Lights', 'Fenders & Rack'],
+    passengers: 1,
+    batteryCapacity: 710
   }
 ];
 

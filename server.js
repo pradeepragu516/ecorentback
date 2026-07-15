@@ -40,21 +40,38 @@ app.use(cookieParser());
 // Database connection
 let isDbConnected = false;
 mongoose.set('bufferCommands', false); // Disable buffering for all models
-mongoose.connect(process.env.MONGODB_URI, {
-  serverSelectionTimeoutMS: 3000,
-  family: 4 // Force IPv4
-})
-  .then(() => {
+
+const connectDB = async () => {
+  try {
+    console.log('Attempting to connect to MongoDB Atlas...');
+    await mongoose.connect(process.env.MONGODB_URI, {
+      serverSelectionTimeoutMS: 3000,
+      family: 4 // Force IPv4
+    });
     console.log('Connected to MongoDB Atlas');
     isDbConnected = true;
     runSyncRunner();
-  })
-  .catch(err => {
-    console.error('MongoDB connection error. Falling back to local data store.');
-    console.error('DB_ERROR:', err.message);
-    isDbConnected = false;
-    runSyncRunner();
-  });
+  } catch (err) {
+    console.error('MongoDB Atlas connection error. DB_ERROR:', err.message);
+    console.log('Attempting to connect to local MongoDB database...');
+    try {
+      const localUri = process.env.LOCAL_MONGODB_URI || 'mongodb://127.0.0.1:27017/ecorent';
+      await mongoose.connect(localUri, {
+        serverSelectionTimeoutMS: 2000
+      });
+      console.log('Connected to local MongoDB database!');
+      isDbConnected = true;
+      runSyncRunner();
+    } catch (localErr) {
+      console.error('Local MongoDB connection error. DB_ERROR:', localErr.message);
+      console.error('Falling back to local JSON data store.');
+      isDbConnected = false;
+      runSyncRunner();
+    }
+  }
+};
+
+connectDB();
 
 // Make connection status available to routes
 app.use((req, res, next) => {
