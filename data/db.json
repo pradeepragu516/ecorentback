@@ -1,0 +1,148 @@
+{
+  "users": [
+    {
+      "username": "Test User",
+      "email": "user@example.com",
+      "password": "user123",
+      "role": "user",
+      "_id": "1776966647410"
+    },
+    {
+      "username": "Kaarmughilan M U",
+      "email": "kaarmughil2020@gmail.com",
+      "password": "123456",
+      "role": "user",
+      "_id": "1776967437372"
+    },
+    {
+      "username": "Divya",
+      "email": "divya@gmail.com",
+      "password": "123456",
+      "role": "user",
+      "_id": "1776968862462"
+    },
+    {
+      "username": "DIVYA S",
+      "email": "divya.s2023ece@sece.ac.in",
+      "password": "123456",
+      "role": "user",
+      "_id": "1776969231240"
+    },
+    {
+      "username": "Pradeep",
+      "email": "pradeep@gmail.com",
+      "password": "pradeep16",
+      "role": "user",
+      "createdAt": "2026-06-21T16:58:50.822Z",
+      "_id": "1782061130823",
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE3ODIwNjExMzA4MjMiLCJpYXQiOjE3ODIxMTk0NDksImV4cCI6MTc4MjcyNDI0OX0.xd789czYyON_lW25irwr46Q0jXp_KEAFftJsmloRyEs"
+    },
+    {
+      "username": "admin",
+      "email": "admin@ecorent.com",
+      "password": "admin123",
+      "role": "admin",
+      "createdAt": "2026-06-22T09:02:42.967Z",
+      "_id": "1782118962968",
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE3ODIxMTg5NjI5NjgiLCJpYXQiOjE3ODIxMTkwMTQsImV4cCI6MTc4MjcyMzgxNH0.Uq5qHtrNG-qe1g7xnejOMGnbkBsBZbFH-wrDjozqRmw"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "1",
+      "name": "Tesla Model 3",
+      "type": "car",
+      "image": "https://cdn.motor1.com/images/mgl/XkXRV/s1/tesla-model-3.jpg",
+      "price": 99,
+      "range": 400,
+      "speed": 225,
+      "rating": 4.9,
+      "location": "Downtown",
+      "availability": "Available",
+      "description": "The Tesla Model 3 is an electric four-door sedan...",
+      "features": [
+        "Autopilot",
+        "Premium Audio",
+        "Heated Seats",
+        "GPS Navigation",
+        "Bluetooth"
+      ]
+    }
+  ],
+  "bookings": [
+    {
+      "vehicle": "1",
+      "startDate": "2026-06-22",
+      "endDate": "2026-06-23",
+      "pickupLocation": "Downtown",
+      "returnLocation": "Downtown",
+      "totalPaid": 109,
+      "discountAmount": 0,
+      "pointsRedeemed": 0,
+      "pointsEarned": 100,
+      "status": "active",
+      "createdAt": "2026-06-22T09:11:11.066Z",
+      "_id": "1782119471066"
+    }
+  ],
+  "settings": {
+    "contactEmail": "support@ecorent.com",
+    "contactPhone": "8080580805",
+    "contactAddress": "123 Innovation Drive, Green Valley, CA 94043",
+    "socialLinks": {
+      "facebook": "https://facebook.com/ecorent",
+      "twitter": "https://twitter.com/ecorent",
+      "instagram": "https://instagram.com/ecorent"
+    },
+    "maintenanceMode": false
+  },
+  "notifications": [
+    {
+      "user": "1782061130823",
+      "title": "Welcome to EcoRent! 🎉",
+      "message": "Welcome, Pradeep! Your registration is successful. Discover green mobility options on your dashboard.",
+      "type": "success",
+      "read": false,
+      "createdAt": "2026-06-21T16:58:50.826Z",
+      "_id": "1782061130828"
+    },
+    {
+      "user": "1782118962968",
+      "title": "Welcome to EcoRent! 🎉",
+      "message": "Welcome, admin! Your registration is successful. Discover green mobility options on your dashboard.",
+      "type": "success",
+      "read": false,
+      "createdAt": "2026-06-22T09:02:42.974Z",
+      "_id": "1782118962975"
+    },
+    {
+      "title": "Payment Received! 💳",
+      "message": "Payment of $109 was received successfully. Order ID: order_mock_1782119471103",
+      "type": "success",
+      "read": false,
+      "createdAt": "2026-06-22T09:11:13.179Z",
+      "_id": "1782119473180"
+    }
+  ],
+  "rewards": [
+    {
+      "points": 100,
+      "redeemedPoints": 0,
+      "availablePoints": 100,
+      "_id": "1782119467280"
+    }
+  ],
+  "payments": [
+    {
+      "booking": "1782119471066",
+      "amount": 109,
+      "paymentMethod": "Razorpay",
+      "razorpayOrderId": "order_mock_1782119471103",
+      "status": "Paid",
+      "createdAt": "2026-06-22T09:11:11.103Z",
+      "_id": "1782119471106",
+      "razorpayPaymentId": "pay_mock_1782119472614",
+      "razorpaySignature": "mock_signature_valid"
+    }
+  ]
+}
